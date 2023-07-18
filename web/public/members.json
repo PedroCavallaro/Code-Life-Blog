@@ -1,0 +1,19 @@
+{
+    "members": [
+        {
+            "name": "Enzo",
+            "picture": "enzocas.jpeg",
+            "desc": "My name is Enzo. I’m 18 years old and I’m from Brazil !\nI’m a System Analysis and Development student, but, first of all, I’m a code lover.This blog is a part of my mind that i decided to share with others."
+        },
+        {
+            "name": "Pedro Cavallaro",
+            "picture": "pedro1.jpeg",
+            "desc": "My name is Enzo. I’m 18 years old and I’m from Brazil !\nI’m a System Analysis and Development student, but, first of all, I’m a code lover.This blog is a part of my mind that i decided to share with others."
+        },
+        {
+            "name": "Pedro Mossini",
+            "picture": "pedro2.jpeg",
+            "desc": "My name is Enzo. I’m 18 years old and I’m from Brazil !\nI’m a System Analysis and Development student, but, first of all, I’m a code lover.This blog is a part of my mind that i decided to share with others."
+        }
+    ]
+}
