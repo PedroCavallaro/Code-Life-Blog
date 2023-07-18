@@ -29,7 +29,7 @@ export default function NavBar() {
 
     return (
         <header className="bg-purple-100 mx-auto w-screen text-purple-50 ">
-            <nav className="bg-purple-300 flex justify-around p-2 items-center rounded-br-[15px] rounded-bl-[15px] lg:h-[65px] lg:text-lg ">
+            <nav className="bg-purple-300 flex justify-around p-2  items-center rounded-br-[15px] rounded-bl-[15px] lg:h-[65px] lg:text-lg ">
                 <div className="flex flex-col">
                     <Link
                         onClick={() => handlePageChange(0)}
@@ -39,7 +39,7 @@ export default function NavBar() {
                         CODE LIFE
                     </Link>
                     {page === Pages["CODE LIFE"] && (
-                        <span className="w-auto h-1 bg-purple-800"></span>
+                        <span className="w-auto h-1 bg-purple-800 hidden lg:flex"></span>
                     )}
                 </div>
                 <label
@@ -49,7 +49,7 @@ export default function NavBar() {
                     <Input placeholder="tags" />
                     <Search color="#efe6fd" />
                 </label>
-                <div className="flex gap-10 font-sans font-bold text-purple-50">
+                <div className="gap-10 font-sans font-bold text-purple-50 hidden lg:flex">
                     <div className="flex flex-col">
                         <Link
                             onClick={() => handlePageChange(1)}
@@ -62,16 +62,16 @@ export default function NavBar() {
                             <span className="w-auto h-1 bg-purple-800"></span>
                         )}
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col ">
                         <Link
-                            onClick={() => handlePageChange(1)}
+                            onClick={() => handlePageChange(2)}
                             href={"/AboutUs"}
                             className="hidden lg:flex
                          "
                         >
                             Contatos
                         </Link>
-                        {page === Pages["About Us"] && (
+                        {page === Pages["Contact"] && (
                             <span className="w-auto h-1 bg-purple-800"></span>
                         )}
                     </div>
@@ -81,7 +81,7 @@ export default function NavBar() {
                 </button>
             </nav>
             {isMenuOpen && (
-                <div className="w-screen flex flex-col mt-2 items-center justify-end gap-2 lg:w-[10%]">
+                <div className="w-screen flex flex-col mt-2 items-center justify-end gap-2 lg:hidden">
                     <Link
                         href={"/"}
                         className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
