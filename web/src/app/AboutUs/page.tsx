@@ -19,9 +19,17 @@ export default function AboutUs() {
     }
 
     useEffect(() => {
-        fetch("members.json")
+        const controller = new AbortController();
+        const signal = controller.signal;
+        fetch("members.json", { signal })
             .then((res) => res.json())
-            .then((data) => setMembers(data.members));
+            .then((data) => {
+                setMembers(data.members);
+            });
+
+        return () => {
+            controller.abort();
+        };
     }, []);
 
     return (
