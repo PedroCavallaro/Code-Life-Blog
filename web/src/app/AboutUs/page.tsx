@@ -26,13 +26,17 @@ export default function AboutUs() {
 
     return (
         <>
-            <div className="flex justify-start p-4 mt-4">
+            <div className="flex justify-start p-4 mt-4 w-screen lg:hidden">
                 <button className="w-[219px] h-[40px] bg-purple-500 text-white rounded-sm shadow-md">
                     About us
                 </button>
             </div>
-            <main className="flex items-center justify-center flex-col gap-4 bg-purple-600  mx-auto p-2 rounded-md">
-                <ChangeInfo />
+            <main className="flex items-center justify-center flex-col gap-4 bg-purple-600 w-[95%] mx-auto rounded-md lg:h-[35rem] lg:mt-10">
+                <div className="relative lg:w-screen">
+                    <div className="lg:absolute -top-7 right-4">
+                        <ChangeInfo />
+                    </div>
+                </div>
                 <section className="flex justify-around gap-3">
                     {members?.map((member, index) => {
                         return (
@@ -51,13 +55,7 @@ export default function AboutUs() {
                 <section className=" flex flex-col justify-center items-center gap-4 min-h-[200px]">
                     {typeof members !== "undefined" && (
                         <>
-                            <p className="text-white text-sm w-[20rem]">
-                                Você está vendo informaçãoes de:{" "}
-                                <span className="text-purple-50 text-md wit">
-                                    {members[memberId].name}
-                                </span>
-                            </p>
-                            <p className="text-white text-sm w-[19rem] p-4 text-center">
+                            <p className="text-white text-sm w-[19rem] p-4 text-center lg:w-[70%] lg:text-2xl">
                                 {members[memberId].desc}
                             </p>
                         </>
