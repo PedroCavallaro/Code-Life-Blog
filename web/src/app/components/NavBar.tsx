@@ -95,7 +95,7 @@ export default function NavBar() {
                         Sobre Nós
                     </Link>
                     <Link
-                        href={"/AboutUs"}
+                        href={"/Contacts"}
                         className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
                     >
                         Contatos
