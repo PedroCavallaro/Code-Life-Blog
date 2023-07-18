@@ -3,10 +3,11 @@ import type { Metadata } from "next";
 import { Roboto_Mono as Roboto } from "next/font/google";
 import NavBar from "./components/NavBar";
 
-const roboto = Roboto({ 
-  subsets: ["latin"], 
+const roboto = Roboto({
+  subsets: ["latin"],
 
-  variable: "--font-roboto" });
+  variable: "--font-roboto",
+});
 
 export const metadata: Metadata = {
   title: "Code Life",
@@ -21,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${roboto.className} bg-purple-100 bg-no-repeat`}>
-        <NavBar/>
+        <NavBar />
         {children}
-        </body>
+      </body>
     </html>
   );
 }
