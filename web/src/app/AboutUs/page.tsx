@@ -3,14 +3,20 @@ import { useEffect, useState } from "react";
 import ChangeInfo from "../components/AboutUs/ChangeInfo";
 import ProfileIcon from "../components/AboutUs/ProfileIcon";
 
-interface Member {
+export interface Member {
+    id: number;
     name: string;
     picture: string;
+    salutation: string;
     desc: string;
 }
 export default function AboutUs() {
     const [members, setMembers] = useState<Member[]>();
     const [memberId, setMemberId] = useState<number>(0);
+
+    function handleProfileClick(id: number) {
+        setMemberId(id);
+    }
 
     useEffect(() => {
         fetch("members.json")
@@ -29,10 +35,20 @@ export default function AboutUs() {
                 <ChangeInfo />
                 <section className="flex justify-around gap-3">
                     {members?.map((member, index) => {
-                        return <ProfileIcon key={index.toString()} />;
+                        return (
+                            <ProfileIcon
+                                salutation={member.salutation}
+                                handler={handleProfileClick}
+                                id={member.id}
+                                name={member.name}
+                                picture={member.picture}
+                                desc={member.desc}
+                                key={index.toString()}
+                            />
+                        );
                     })}
                 </section>
-                <section className=" flex flex-col justify-center items-center gap-4">
+                <section className=" flex flex-col justify-center items-center gap-4 min-h-[200px]">
                     {typeof members !== "undefined" && (
                         <>
                             <p className="text-white text-sm w-[20rem]">
