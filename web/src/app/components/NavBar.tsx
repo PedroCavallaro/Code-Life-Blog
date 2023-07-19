@@ -23,12 +23,9 @@ export default function NavBar() {
         let count = 0;
 
         interval = setInterval(() => {
-            // @ts-ignore
             eve.target.innerText = title
                 .split("")
-                // @ts-ignore
                 .map((letter, index) => {
-                    console.log(index);
                     if (index < count) {
                         return title[index];
                     }
@@ -36,26 +33,19 @@ export default function NavBar() {
                 })
                 .join("");
             if (count >= title.length) {
-                // @ts-ignore
-                clearInterval(interval);
+                clearInterval(interval!);
             }
 
             count += 1 / 3;
         }, 50);
     }
-    // @ts-ignore
-    let interval = null;
+
+    let interval: ReturnType<typeof setInterval> | null = null;
+
     const letters = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+    const title = "CODE LIFE";
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [page, setPage] = useState<number>(0);
-    const [title, setTitle] = useState<string>("CODE LIFE");
-
-    useEffect(() => {
-        const url = new URL(window.location.href);
-        const path = url.toString().split("/");
-
-        // setPage(path[path.length -1])
-    }, []);
 
     return (
         <header className="bg-purple-100 mx-auto w-screen text-purple-50 ">
@@ -67,7 +57,7 @@ export default function NavBar() {
                             matrixEffect(e);
                         }}
                         href={"/"}
-                        className="font-sans w-10 lg:w-auto font-bold lg:text-2xl l"
+                        className="font-sans w-10 lg:w-auto font-bold lg:text-2xl "
                     >
                         CODE LIFE
                     </Link>

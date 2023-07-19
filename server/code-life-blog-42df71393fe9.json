@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "code-life-blog",
+  "private_key_id": "42df71393fe92ddbbbb0f7f380ad44f142d5911e",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDB/01+7aOq0Skr\nUqj1aD1bE5cMeSl+gz2jaZimBHTAz4YBCOn/LGl0egSN92OPa5kXw+HBUtctlNgQ\n+NN5vQ+XtRUJk7FcWTFDfF2ezAEYwRwd0k544BOMHFYuDDhvZcW2TCtWdBd4KB19\nBuDDrLG79jWgJEr6toAdxQDO1jKpAoFYWEIjMcj9lXEMQNREWmAX4nNkp621xp9z\naYMonHKwpDNIdmFZuMssf2D+we+u42/rqmDto9V15DcbbT5K+UaEyoY4r95te/UU\nAklj6jSU+PCqu29+N2BfDXGWen/qaLl40oALhSffq5qBzyYjZU3BpdUGn0WHtFGn\n/CW9oSw9AgMBAAECggEAWQH/F26G+levEO6DEN270O7DDfkFXcNvY2uOmxVOUCym\n6hCh8+73j3ZwYoaQCnyuqCW6jc2pZoN1Qww3UxK4db2iols+NAXEQZdtCO/GzQnF\nEbWtRW5h6ZYSwFvhBNNoDEUUWT04i2u0Y+nk9EJm5buITSp5sGBNldsOjNfgNIRi\nNqGrIsH/x3nKrExo1DtWrRCSdyRNnFXvBFOQQjPT/OQvFvGpP1uSJsHvr+KWuJL8\nlj3gQdU49l3j5Zivqni1O0CeFTtjw/StFsMMv6uJnOc5fwB+ul4eOU9eRtMbDUcg\nhFNioHaW3ldB9fBXAwbNgVkpfLlCTK99sFnBEmZmLQKBgQDi2HOeqLh4HO/IzUvj\nYv7tm1CryY2scRIKRpDw2TCvT/qxlyyvFDYi6tRl81Pw8kOpb1lXfS/uEI+fbXX7\n6AvMvfQsPdoT3KuoB1KmswYr8/CUlhweV/q1+Q5x9xpexbYli3AOt8HrncaFqRxq\nwizAOviYjckPOoPKZjFU85j+IwKBgQDa7hibx0Id4EjfggcF52AAux4s7ASr7frN\nF16OU+pcboM2QEdJDMa6l6OWQHn8XC7OE/N3bCHXcc3pRW3WLOEQruxoYulmAb6t\nWEl5gyk0nadxuqYqEomXQYBIiowwbkfIeGXdmQ3hkcubEGjbydtDXIuDwAfqSo1V\nZK+0RntiHwKBgAE7c8VU3UupvJO2qcbebswTn+iO+7oIEzUDFR55z43kPVRhodiB\nn5mo9OZo3/fbGQr+k9mp0GzWojEXgyCPLiE6luz2mQyqkjQjdgt5xXrPpGrqNdTk\nXXRHmhB8ayRAprClhUJPNTp2bPGk7YaW729L4rXRb1op0zVyQKpZeGdJAoGAAsru\nvW35RfBKfa9m74hYDSpV5DTOinLqtBsMNbyUTMGMIvEG98OV9WNhztTbuYBjiHVw\nsaFLfTgSbFtaX1ULOe9BTMOWPprfF878gPRPXkB0llrPK9I4txk6zbIWv7doawI+\nKml9Z9c4Ra4b6FHW3jEcBn44m6B/1QsHwsDzafkCgYAbBfyZIXm8fuMLgLSUqP+v\nCmsgxbjGRnhJZ5q3undz9wIOiNACwOMy31ZwvwiuRGMCh5lsXAXGUTHa7NSPGO0k\nU/et4trwuDuk+ZXkRS/J87n1BH4X9iV0g5ngnFJvtypE9EL9Q+iWP6wIifpYPHRO\nQaXaIuIJVcHNW+FwvRiYMw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "codelifeblogdrive@code-life-blog.iam.gserviceaccount.com",
+  "client_id": "117613027159451650612",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/codelifeblogdrive%40code-life-blog.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
