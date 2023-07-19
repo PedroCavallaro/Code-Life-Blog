@@ -1,14 +1,16 @@
 "use client";
 import { Menu, Search } from "lucide-react";
-import { useEffect, useState } from "react";
+import { BaseSyntheticEvent, useEffect, useState } from "react";
 import { Input } from "./Input";
 import Link from "next/link";
+import { count } from "console";
 
 enum Pages {
     "CODE LIFE",
     "About Us",
     "Contact",
 }
+
 export default function NavBar() {
     function handleMenu() {
         setIsMenuOpen(!isMenuOpen);
@@ -17,15 +19,33 @@ export default function NavBar() {
         setPage(page);
     }
 
+    function matrixEffect(eve: BaseSyntheticEvent<MouseEvent, EventTarget>) {
+        let count = 0;
+
+        interval = setInterval(() => {
+            eve.target.innerText = title
+                .split("")
+                .map((letter, index) => {
+                    if (index < count) {
+                        return title[index];
+                    }
+                    return letters[Math.floor(Math.random() * 26)];
+                })
+                .join("");
+            if (count >= title.length) {
+                clearInterval(interval!);
+            }
+
+            count += 1 / 3;
+        }, 50);
+    }
+
+    let interval: ReturnType<typeof setInterval> | null = null;
+
+    const letters = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+    const title = "CODE LIFE";
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [page, setPage] = useState<number>(0);
-
-    useEffect(() => {
-        const url = new URL(window.location.href);
-        const path = url.toString().split("/");
-
-        // setPage(path[path.length -1])
-    }, []);
 
     return (
         <header className="bg-purple-100 mx-auto w-screen text-purple-50 ">
@@ -33,8 +53,11 @@ export default function NavBar() {
                 <div className="flex flex-col">
                     <Link
                         onClick={() => handlePageChange(0)}
+                        onMouseOver={(e) => {
+                            matrixEffect(e);
+                        }}
                         href={"/"}
-                        className="font-sans w-10 lg:w-auto font-bold lg:text-2xl l"
+                        className="font-sans w-10 lg:w-auto font-bold lg:text-2xl "
                     >
                         CODE LIFE
                     </Link>
@@ -83,19 +106,22 @@ export default function NavBar() {
             {isMenuOpen && (
                 <div className="w-screen flex flex-col mt-2 items-center justify-end gap-2 lg:hidden">
                     <Link
+                        onClick={handleMenu}
                         href={"/"}
                         className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
                     >
                         Página Inicial
                     </Link>
                     <Link
+                        onClick={handleMenu}
                         href={"/AboutUs"}
                         className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
                     >
                         Sobre Nós
                     </Link>
                     <Link
-                        href={"/AboutUs"}
+                        onClick={handleMenu}
+                        href={"/Contacts"}
                         className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
                     >
                         Contatos

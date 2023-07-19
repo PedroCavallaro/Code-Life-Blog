@@ -9,7 +9,6 @@ export default function ProfileIcon(ProfileProps: ProfileProps) {
     function handleProfileClick(id: number) {
         ProfileProps.handler(id);
     }
-    console.log(ProfileProps);
     return (
         <>
             <div

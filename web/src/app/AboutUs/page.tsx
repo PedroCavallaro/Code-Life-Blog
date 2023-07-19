@@ -15,13 +15,27 @@ export default function AboutUs() {
     const [memberId, setMemberId] = useState<number>(0);
 
     function handleProfileClick(id: number) {
-        setMemberId(id);
+        memberId === id ? "" : setMemberId(id);
     }
 
     useEffect(() => {
-        fetch("members.json")
+        const controller = new AbortController();
+        const signal = controller.signal;
+
+        fetch("members.json", { signal })
             .then((res) => res.json())
-            .then((data) => setMembers(data.members));
+            .then((data) => {
+                setMembers(data.members);
+            })
+            .catch((err) => {
+                if (err.name === "AbortError") {
+                    console.log("Cancelou a requisição.");
+                }
+            });
+
+        return () => {
+            controller.abort();
+        };
     }, []);
 
     return (
@@ -30,6 +44,10 @@ export default function AboutUs() {
                 <button className="w-[219px] h-[40px] bg-purple-500 text-white rounded-sm shadow-md">
                     About us
                 </button>
+                {/* <iframe
+                    id="test"
+                    src="https://drive.google.com/uc?export=view&id=1WT7gnGoP97sxfU-qTMrkz8ehuFmuykHE"
+                ></iframe> */}
             </div>
             <main className="flex items-center justify-center flex-col gap-4 bg-purple-600 w-[95%] mx-auto rounded-md lg:h-[35rem] lg:mt-10">
                 <div className="relative lg:w-screen">
