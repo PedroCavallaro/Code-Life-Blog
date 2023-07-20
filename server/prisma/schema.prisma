@@ -20,3 +20,8 @@ model Post {
   tags       String[]
   driveId    String
 }
+
+model Email {
+  id    String @id @default(uuid())
+  email String @unique
+}
