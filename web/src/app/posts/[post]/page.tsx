@@ -1,11 +1,29 @@
+"use client";
+
 import PostBody from "@/app/components/posts/PostBody";
 import PostTitle from "@/app/components/posts/PostTitle";
+import { api } from "@/app/lib/api";
+import { useState, useMemo } from "react";
 
 interface pageProps {
   title: string;
 }
 
 export default function page() {
+  const [markdown, setMarkdown] = useState<string>();
+  const memo = useMemo(async () => {
+    await api
+      .get(`/post/ID`, {
+        headers: {
+          "Content-Type": "text/markdown",
+        },
+      })
+      .then((res) => {
+        setMarkdown(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <main className="flex flex-col items-center">
       <PostTitle
