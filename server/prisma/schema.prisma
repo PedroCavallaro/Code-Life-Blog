@@ -23,5 +23,5 @@ model Post {
 
 model Email {
   id    String @id @default(uuid())
-  email String
+  email String @unique
 }
