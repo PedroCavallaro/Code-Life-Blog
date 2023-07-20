@@ -9,9 +9,11 @@ interface PostBodyParams {
 
 export default function PostBody(params: PostBodyParams) {
   return (
-    <div className="w-[95%] bg-purple-600 text-purple-50 mt-3 mb-3 p-2 rounded-md shadow">
-      <p className="m-1 text-sm leading-relaxed">{params.content}</p>
-      <div className="text-xs italic mt-4 flex flex-col gap-2">
+    <div className="w-[95%] bg-purple-600 text-purple-50 mt-3 mb-3 p-2 rounded-md shadow lg:w-[65%]">
+      <p className="m-1 p-1 text-sm leading-relaxed lg:text-base">
+        {params.content}
+      </p>
+      <div className="text-xs p-1 italic mt-4 flex flex-col gap-2 lg:text-sm">
         <p>
           <b>tags: </b>
           {params.tags.toString().replaceAll(",", " ")}
@@ -22,7 +24,7 @@ export default function PostBody(params: PostBodyParams) {
         </p>
       </div>
       <div className="flex items-center justify-center mt-8">
-        <div className="bg-purple-900 w-[50%]  rounded-lg ">
+        <div className="bg-purple-900 w-[50%]  rounded-lg lg:w-[15%]">
           <Link
             href={"/"}
             className="text-[10px] flex gap-2 p-2 items-center text-center"
