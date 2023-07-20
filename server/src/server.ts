@@ -1,10 +1,10 @@
 import fastify from "fastify";
-import { fileRoutes } from "./routes/file";
+import { postRoutes } from "./routes/post";
 import Cors from "@fastify/cors";
 
 const app = fastify();
 
-app.register(fileRoutes);
+app.register(postRoutes);
 app.register(Cors, {
     origin: true,
 });
