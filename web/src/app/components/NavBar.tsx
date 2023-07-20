@@ -126,6 +126,13 @@ export default function NavBar() {
                     >
                         Contatos
                     </Link>
+                    <Link
+                        onClick={handleMenu}
+                        href={"/Email"}
+                        className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
+                    >
+                        Fique por dentro
+                    </Link>
                 </div>
             )}
         </header>
