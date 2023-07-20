@@ -3,12 +3,21 @@ import { useForm } from "react-hook-form";
 import { Input } from "../components/Input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { api } from "../lib/api";
 
 const schema = z.object({
-    email: z.string().email({ message: "Digite um email válido" }),
+    email: z.string().email({
+        message: "Digite um email válido",
+    }),
 });
 
 type FormData = z.infer<typeof schema>;
+
+async function createEmail(email: string) {
+    await api.post("/email", {
+        email: email,
+    });
+}
 
 export default function Email() {
     const {
@@ -23,8 +32,8 @@ export default function Email() {
     return (
         <main className="mt-4 lg:flex lg:items-center lg:justify-center">
             <form
-                onSubmit={handleSubmit(() => {
-                    console.log("oi");
+                onSubmit={handleSubmit(async ({ email }) => {
+                    createEmail(email);
                 })}
                 className="flex flex-col justify-center items-center gap-4"
             >
@@ -35,9 +44,9 @@ export default function Email() {
                 </div>
                 <div className="flex flex-col gap-2  w-[90%]">
                     <Input
-                        {...register("email")}
-                        type="text"
+                        type="email"
                         className="shadow-lg plsaceholder:text-purple-50 rounded-md w-full h-[52px] p-2 placeholder:text-white text-white border-2 border-white"
+                        {...register("email")}
                     />
                     {errors.email && (
                         <span className="text-red-600 text-sm">
