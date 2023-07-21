@@ -2,9 +2,12 @@
     "name": "code-life-server",
     "version": 2,
     "public": true,
-    "build": {
-        "use": "@vercel/node"
-    },
+    "build": [
+        {
+            "src": "api/server.ts",
+            "use": "@vercel/node"
+        }
+    ],
     "routes": [
         {
             "src": "/(.*)",
