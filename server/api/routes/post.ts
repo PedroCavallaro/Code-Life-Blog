@@ -21,7 +21,6 @@ export async function postRoutes(app: FastifyInstance) {
                 },
             ],
         });
-
         return posts;
     });
     app.get("/post/:id", async (req, reply) => {
@@ -29,19 +28,16 @@ export async function postRoutes(app: FastifyInstance) {
             id: z.string().uuid(),
         });
         const { id } = schema.parse(req.params);
-
         const posts = await prisma.post.findUnique({
             where: {
                 id,
             },
         });
         if (!posts) return reply.status(404).send();
-
         const file = await driverService.files.get({
             fileId: posts?.driveId,
             alt: "media",
         });
-
         return file.data;
     });
 }
