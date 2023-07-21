@@ -69,7 +69,7 @@ export default function NavBar() {
                     htmlFor=""
                     className="bg-purple-100 flex p-1 rounded-md items-center cursor-pointer"
                 >
-                    <Input placeholder="tags" />
+                    <Input placeholder="tag" />
                     <Search color="#efe6fd" />
                 </label>
                 <div className="gap-10 font-sans font-bold text-purple-50 hidden lg:flex">

@@ -23,6 +23,7 @@ export default function Email() {
     const {
         handleSubmit,
         register,
+        reset,
         formState: { errors },
     } = useForm<FormData>({
         mode: "onBlur",
@@ -34,6 +35,7 @@ export default function Email() {
             <form
                 onSubmit={handleSubmit(async ({ email }) => {
                     createEmail(email);
+                    reset();
                 })}
                 className="flex flex-col justify-center items-center gap-4"
             >
@@ -45,7 +47,8 @@ export default function Email() {
                 <div className="flex flex-col gap-2  w-[90%]">
                     <Input
                         type="email"
-                        className="shadow-lg plsaceholder:text-purple-50 rounded-md w-full h-[52px] p-2 placeholder:text-white text-white border-2 border-white"
+                        placeholder="email@email.com"
+                        className="shadow-lg plsaceholder:text-purple-50 rounded-md w-full h-[52px] p-2  text-white border-2 border-white"
                         {...register("email")}
                     />
                     {errors.email && (

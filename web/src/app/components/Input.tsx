@@ -11,7 +11,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                     type={type}
                     ref={ref}
                     className={twMerge(
-                        `w-32 bg-purple-100 outline-none lg:w-[632px] lg:h-[36px] ${className}`
+                        `w-32 bg-purple-100 outline-none lg:w-[632px] lg:h-[36px] placeholder:text-white ${className}`
                     )}
                     name={name}
                     {...props}
