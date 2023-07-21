@@ -2,7 +2,6 @@ import { FastifyInstance } from "fastify";
 import { google } from "googleapis";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
-import { transporter, html } from "../lib/transporter";
 
 export async function postRoutes(app: FastifyInstance) {
     const auth = new google.auth.GoogleAuth({
