@@ -22,6 +22,23 @@ export async function postRoutes(app: FastifyInstance) {
         });
         return posts;
     });
+    app.get("/postsBytag/:tag", async (req) => {
+        const schema = z.object({
+            tag: z.string().min(2),
+        });
+
+        const { tag } = schema.parse(req.params);
+
+        const posts = await prisma.post.findMany({
+            where: {
+                tags: {
+                    has: tag,
+                },
+            },
+        });
+
+        return posts;
+    });
     app.get("/post/:id", async (req, reply) => {
         const schema = z.object({
             id: z.string().uuid(),
