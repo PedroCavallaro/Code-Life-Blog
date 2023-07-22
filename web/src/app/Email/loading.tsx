@@ -17,7 +17,8 @@ export default function loading() {
                 <Input
                     type="submit"
                     value="Enviar"
-                    className="flex w-[90%] items-center justify-center p-2 bg-gray-200 text-purple-50 rounded-md shadow mt-4 lg:w-[320px] lg:h-[55px] lg:ml-40 lg:mt-12"
+                    className="flex w-[90%]  items-center justify-center p-2 bg-gray-200 text-purple-50 rounded-md shadow mt-4 
+                    lg:w-[320px] lg:h-[55px] lg:ml-40 lg:mt-12"
                 />
             </form>
         </main>

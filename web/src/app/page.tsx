@@ -4,7 +4,7 @@ import DateCard from "./components/Home/DateCard";
 import PostCard from "./components/Home/PostCard";
 import { api } from "./lib/api";
 
-interface Post {
+export interface Post {
     id: string;
     postNumber: number;
     title: string;
@@ -14,12 +14,12 @@ interface Post {
     tags: Array<string>;
     driveId: string;
 }
-function formatPostNumber(postNumber: number) {
+export function formatPostNumber(postNumber: number) {
     if (postNumber < 10) return `00${postNumber}`;
     if (postNumber >= 10 && postNumber <= 100) return `0${postNumber}`;
     return postNumber;
 }
-function formatPostDate(date: string) {
+export function formatPostDate(date: string) {
     const newDate = new Date(date);
     let month = newDate.toLocaleString("default", {
         month: `long`,
