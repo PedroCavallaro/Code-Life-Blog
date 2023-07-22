@@ -44,18 +44,14 @@ export default function AboutUs() {
                 <button className="w-[219px] h-[40px] bg-purple-500 text-white rounded-sm shadow-md">
                     About us
                 </button>
-                {/* <iframe
-                    id="test"
-                    src="https://drive.google.com/uc?export=view&id=1WT7gnGoP97sxfU-qTMrkz8ehuFmuykHE"
-                ></iframe> */}
             </div>
-            <main className="flex items-center justify-center flex-col gap-4 bg-purple-600 w-[95%] mx-auto rounded-md lg:h-[35rem] lg:mt-10">
+            <main className="flex items-center justify-center  flex-col gap-4 bg-purple-600 w-full lg:w-[95%] rounded-md lg:h-[35rem] lg:mt-10">
                 <div className="relative lg:w-screen">
                     <div className="lg:absolute -top-7 right-4">
                         <ChangeInfo />
                     </div>
                 </div>
-                <section className="flex justify-around gap-3">
+                <section className="flex justify-center items-center gap-2">
                     {members?.map((member, index) => {
                         return (
                             <ProfileIcon

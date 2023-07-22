@@ -5,6 +5,7 @@ enum Pages {
   "CODE LIFE",
   "About Us",
   "Contact",
+  "Stay Tuned",
 }
 export default function MenuDesktop({
   handlePageChange,
@@ -33,13 +34,26 @@ export default function MenuDesktop({
       <div className="flex flex-col ">
         <Link
           onClick={() => handler(2)}
-          href={"/AboutUs"}
+          href={"/Contacts"}
           className="hidden lg:flex
                          "
         >
           Contatos
         </Link>
         {page === Pages["Contact"] && (
+          <span className="w-auto h-1 bg-purple-800"></span>
+        )}
+      </div>
+      <div className="flex flex-col ">
+        <Link
+          onClick={() => handler(3)}
+          href={"/Email"}
+          className="hidden lg:flex
+                         "
+        >
+          Fique por Dentro
+        </Link>
+        {page === Pages["Stay Tuned"] && (
           <span className="w-auto h-1 bg-purple-800"></span>
         )}
       </div>
