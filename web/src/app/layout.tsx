@@ -22,7 +22,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-br">
-            <body className={`${roboto.className} bg-purple-100 bg-no-repeat`}>
+            <body
+                className={`${roboto.className} bg-purple-100 bg-no-repeat overflow-x-hidden`}
+            >
                 <NavBar />
                 {children}
             </body>
