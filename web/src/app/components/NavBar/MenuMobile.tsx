@@ -33,7 +33,7 @@ export default function MenuMobile({ handleMenu }: { handleMenu: Function }) {
                 href={"/Email"}
                 className="rounded-md bg-purple-500 text-center p-1 w-[90%] "
             >
-                Fique por dentro
+                Newsletter
             </Link>
         </div>
     );

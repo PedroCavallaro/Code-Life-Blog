@@ -1,10 +1,10 @@
 "use client";
-
 import { useCallback, useEffect, useState } from "react";
 import DateCard from "../components/Home/DateCard";
 import PostCard from "../components/Home/PostCard";
-import { formatPostNumber, formatPostDate, Post } from "../page";
 import { api } from "../lib/api";
+import { formatPostNumber, formatPostDate } from "../lib/dates";
+import { Post } from "@/interfaces";
 
 async function getPosts(tag: string) {
     const res = await api.get(`/postsBytag/${tag}`);

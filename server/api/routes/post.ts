@@ -56,6 +56,7 @@ export async function postRoutes(app: FastifyInstance) {
             fileId: posts?.driveId,
             alt: "media",
         });
-        return file.data;
+        const post = { ...posts, data: file.data };
+        return post;
     });
 }

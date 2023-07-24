@@ -1,29 +1,35 @@
 "use client";
-
+import { Post } from "@/interfaces";
 import PostBody from "@/app/components/posts/PostBody";
 import PostTitle from "@/app/components/posts/PostTitle";
 import { api } from "@/app/lib/api";
-import { useState, useMemo } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 interface pageProps {
     title: string;
 }
 
+async function getPost(postId: string) {
+    const res = await api.get(`/posts/${postId}`);
+    return res.data;
+}
+
 export default function Post() {
     const [markdown, setMarkdown] = useState<string>();
-    const memo = useMemo(async () => {
-        await api
-            .get(`/post/ID`, {
-                headers: {
-                    "Content-Type": "text/markdown",
-                },
-            })
-            .then((res) => {
-                setMarkdown(res.data);
-            })
-            .catch((err) => console.log(err));
+
+    const handleResults = useCallback(async (tag: string) => {
+        const response = await getPost(tag);
+        setMarkdown(response);
     }, []);
 
+    useEffect(() => {
+        try {
+            const postId = location.href.split("/")[4]!;
+            handleResults(postId);
+        } catch (err) {
+            console.log(err);
+        }
+    }, [handleResults]);
     return (
         <main className="flex flex-col items-center">
             <PostTitle
