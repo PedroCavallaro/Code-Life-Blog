@@ -41,8 +41,14 @@ export default function Email() {
                 onSubmit={handleSubmit(async ({ email }) => {
                     await createEmail(email);
                     !success
-                        ? swal.fire({ icon: "error" })
-                        : swal.fire({ icon: "success" });
+                        ? swal.fire({
+                              icon: "error",
+                              title: "Email cadastrado com sucesso",
+                          })
+                        : swal.fire({
+                              icon: "success",
+                              title: "Algo não saiu como esperado",
+                          });
                     reset();
                 })}
                 className="flex flex-col justify-center items-center gap-4 "
