@@ -1,6 +1,6 @@
 interface titleParams {
-  title: string;
-  date: string;
+  title?: string;
+  date?: string;
 }
 
 export default function PostTitle(params: titleParams) {
