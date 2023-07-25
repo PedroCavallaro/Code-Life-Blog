@@ -4,6 +4,7 @@ import DateCard from "../components/Home/DateCard";
 import PostCard from "../components/Home/PostCard";
 import { api } from "../lib/api";
 import { formatPostNumber, formatPostDate } from "../lib/dates";
+import axios from "axios";
 
 interface Post {
     id: string;
@@ -19,7 +20,20 @@ interface Post {
 export default function Home() {
     const [posts, setPosts] = useState<Post[]>();
     const memo = useMemo(async () => {
-        await api.get("/posts").then((res) => setPosts(res.data));
+        const cancelToken = axios.CancelToken.source();
+        await api
+            .get("/posts", {
+                cancelToken: cancelToken.token,
+            })
+            .then((res) => setPosts(res.data))
+            .catch((err) => {
+                if (axios.isCancel(err)) {
+                    console.log("Requisição cancelada");
+                }
+            });
+        return () => {
+            cancelToken.cancel();
+        };
     }, []);
     return (
         <main className="flex flex-col ">
