@@ -45,7 +45,7 @@ export default function AboutUs() {
                     About us
                 </button>
             </div>
-            <main className="flex items-center justify-center  flex-col gap-4 bg-purple-600 w-full lg:w-[95%] rounded-md lg:h-[35rem] lg:mt-10">
+            <main className="flex items-center justify-center  flex-col gap-4 bg-purple-600 w-[95%] lg:w-[95%] mx-auto rounded-md lg:h-[35rem] lg:mt-10">
                 <div className="relative lg:w-screen">
                     <div className="lg:absolute -top-7 right-4">
                         <ChangeInfo />
