@@ -42,7 +42,7 @@ export default function AboutUs() {
         <>
             <div className="flex justify-start p-4 mt-4 w-screen lg:hidden">
                 <button className="w-[219px] h-[40px] bg-purple-500 text-white rounded-sm shadow-md">
-                    About us
+                    Sobre Nós
                 </button>
             </div>
             <main className="flex items-center justify-center  flex-col gap-4 bg-purple-600 w-[95%] lg:w-[95%] mx-auto rounded-md lg:h-[35rem] lg:mt-10">
@@ -55,6 +55,7 @@ export default function AboutUs() {
                     {members?.map((member, index) => {
                         return (
                             <ProfileIcon
+                                selectedId={memberId}
                                 salutation={member.salutation}
                                 handler={handleProfileClick}
                                 id={member.id}

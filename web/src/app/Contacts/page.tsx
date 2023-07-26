@@ -12,10 +12,6 @@ const contactInfo = {
             username: "FIRMINOenzo",
             link: "https://github.com/FIRMINOenzo",
         },
-        {
-            username: "pedro",
-            link: "https://github.com/pedro",
-        },
     ],
     linkedin: [
         {

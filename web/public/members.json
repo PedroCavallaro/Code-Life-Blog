@@ -3,9 +3,9 @@
         {
             "id": 0,
             "name": "Pedro Cavallaro",
-            "salutation": "Pedro1",
-            "picture": "pedro1.jpeg",
-            "desc": "macaco1"
+            "salutation": "Prazer! Sou o Pedro",
+            "picture": "PedroC.jpeg",
+            "desc": "Sou um desenvolvedor web, curioso para novos aprendizados e tecnologias. Atualmente estou no 4° semestre de ADS, nessa trajetória ganhei conhecimento de várias linguagens, tais como: React, Node.js, TypeScript, PHP e JAVA. Cada dia que passa busco aprimorar meus códigos e elevar o nível das minha aplicações."
         },
         {
             "id": 1,
@@ -17,9 +17,9 @@
         {
             "id": 2,
             "name": "Pedro Mossini",
-            "salutation": "Pedro2",
-            "picture": "pedro2.jpeg",
-            "desc": "macaco2"
+            "salutation": "macaco",
+            "picture": "PedroM.jpeg",
+            "desc": "Estudante de Análise e Desenvolvimento de Sistemas pela FATEC desde 2022. Sou gestor de tráfego e atualmente trabalho na área de marketing de maneira autônoma.Iniciei meus estudos na Faculdade de Tecnologia no começo de 2022, conhecendo apenas o básico sobre programação e desenvolvimento de sistemas, onde ainda estou me encontrando e sentindo em qual vertente dessa área tão vasta me sinto mais confortável."
         }
     ]
 }

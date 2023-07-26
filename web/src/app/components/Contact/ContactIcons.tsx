@@ -51,7 +51,7 @@ export default function ContactIcons({
                                     />
                                 )}
                             </Link>
-                            <p className="text-sm text-white text-center w-32">
+                            <p className="text-sm text-white text-center lg:w-32">
                                 {profile.username}
                             </p>
                         </div>

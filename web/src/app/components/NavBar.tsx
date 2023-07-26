@@ -4,7 +4,7 @@ import MenuMobile from "./NavBar/MenuMobile";
 import MenuDesktop from "./NavBar/MenuDesktop";
 import Logo from "./NavBar/Logo";
 import SearchBar from "./NavBar/SearchBar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { swal } from "../lib/swal";
 
 enum Pages {
@@ -19,7 +19,6 @@ export default function NavBar() {
     function handlePageChange(page: number) {
         setPage(page);
     }
-
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const [page, setPage] = useState<number>(0);
 
