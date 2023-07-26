@@ -29,6 +29,19 @@ module.exports = {
             fontFamily: {
                 sans: "var(--font-roboto)",
             },
+            keyframes: {
+                contact: {
+                    from: {
+                        left: "-12rem",
+                    },
+                    to: {
+                        left: "-4rem",
+                    },
+                },
+            },
+            animation: {
+                contact: "contact 1s ease",
+            },
         },
     },
     plugins: [],

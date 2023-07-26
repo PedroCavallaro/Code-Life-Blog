@@ -4,6 +4,8 @@ export function formatPostNumber(postNumber: number) {
     return postNumber;
 }
 export function formatPostDate(date: string) {
+    if (!date) return "";
+
     const newDate = new Date(date);
     let month = newDate.toLocaleString("default", {
         month: `long`,
