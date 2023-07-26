@@ -8,47 +8,47 @@ import { markdownConvert } from "@/app/lib/markdown";
 import axios from "axios";
 
 interface markdownProps {
-    postNumber: number;
-    title: string;
-    subtitle: string;
-    date: string;
-    author: string;
-    tags: Array<string>;
-    data: string;
+  postNumber: number;
+  title: string;
+  subtitle: string;
+  date: string;
+  author: string;
+  tags: Array<string>;
+  data: string;
 }
 
 async function getPost(postId: string) {
-    const res = await api.get(`/posts/${postId}`);
+  const res = await api.get(`/posts/${postId}`);
 
-    return res.data;
+  return res.data;
 }
 export default function Post() {
-    const [markdown, setMarkdown] = useState<markdownProps | undefined>();
+  const [markdown, setMarkdown] = useState<markdownProps | undefined>();
 
-    const handleResults = useCallback(async (tag: string) => {
-        const response = await getPost(tag);
-        setMarkdown(response);
-    }, []);
+  const handleResults = useCallback(async (tag: string) => {
+    const response = await getPost(tag);
+    setMarkdown(response);
+  }, []);
 
-    useEffect(() => {
-        try {
-            const postId = location.href.split("/")[4]!;
-            handleResults(postId);
-        } catch (err) {
-            console.log(err);
-        }
-        return () => {};
-    }, [handleResults]);
+  useEffect(() => {
+    try {
+      const postId = location.href.split("/")[4]!;
+      handleResults(postId);
+    } catch (err) {
+      console.log(err);
+    }
+    return () => {};
+  }, [handleResults]);
 
-    return (
-        <main className="flex flex-col items-center">
-            <PostTitle title={markdown?.title} date={markdown?.date} />
+  return (
+    <main className="flex flex-col items-center">
+      <PostTitle title={markdown?.title} date={markdown?.date} />
 
-            <PostBody
-                content={markdownConvert(markdown?.data)}
-                tags={markdown?.tags}
-                author={markdown?.author}
-            />
-        </main>
-    );
+      <PostBody
+        content={markdownConvert(markdown?.data)}
+        tags={markdown?.tags}
+        author={markdown?.author}
+      />
+    </main>
+  );
 }

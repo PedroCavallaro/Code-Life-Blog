@@ -8,7 +8,7 @@ interface PostCardProps {
 export default function PostCard(props: PostCardProps) {
   return (
     <Link
-      href={`/Posts/${props.id}`}
+      href={`/posts/${props.id}`}
       className="bg-purple-400 w-[85%] text-purple-50 rounded-[5px] mt-6 ml-4 shadow-xl p-1 lg:ml-40 lg:w-[60%]"
     >
       <p className="ml-2 my-4 text-sm font-medium lg:text-2xl">{props.title}</p>
