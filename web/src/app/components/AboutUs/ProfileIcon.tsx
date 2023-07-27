@@ -22,7 +22,7 @@ export default function ProfileIcon({
                 onClick={() => handleProfileClick(id)}
                 className={`${
                     selectedId === id ? "bg-purple-300" : "bg-purple-200"
-                } flex items-center justify-center flex-col w-[110px] p-2 h-[120px] cursor-pointer gap-3 rounded-tr-[180px] rounded-tl-[180px] shadow-lg rounded-[7px] lg:w-[280px] lg:h-[280px]`}
+                } flex items-center justify-center flex-col w-[110px] p-2 h-[140px] cursor-pointer gap-3 rounded-tr-[180px] rounded-tl-[180px] shadow-lg rounded-[7px] lg:w-[280px] lg:h-[280px]`}
             >
                 <Image
                     src={`/pictures/${picture}`}
@@ -33,7 +33,7 @@ export default function ProfileIcon({
                 />
                 {/* foto */}
 
-                <p className="text-[10px] lg:text-lg text-white">
+                <p className="text-[10px]  lg:text-lg text-white">
                     {salutation}
                 </p>
             </div>

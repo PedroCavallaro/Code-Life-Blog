@@ -21,10 +21,9 @@ export default function Email() {
             .post("/email", {
                 email: email,
             })
-            .then((res) => setSuccess(true))
             .catch((err) => setSuccess(false));
     }
-    const [success, setSuccess] = useState<boolean>();
+    const [success, setSuccess] = useState<boolean>(true);
     const {
         handleSubmit,
         register,
@@ -43,11 +42,11 @@ export default function Email() {
                     !success
                         ? swal.fire({
                               icon: "error",
-                              title: "Email cadastrado com sucesso",
+                              title: "Algo não saiu como esperado",
                           })
                         : swal.fire({
                               icon: "success",
-                              title: "Algo não saiu como esperado",
+                              title: "Email cadastrado com sucesso",
                           });
                     reset();
                 })}

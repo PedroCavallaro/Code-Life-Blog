@@ -1,19 +1,10 @@
 import { FastifyInstance } from "fastify";
-import path from "path";
-import { promises as fs } from "fs";
-import { google } from "googleapis";
 import { z } from "zod";
 import { prisma } from "../lib/prisma";
+import { html, transporter } from "../lib/transporter";
+import { driverService } from "../lib/drive";
 
 export async function postRoutes(app: FastifyInstance) {
-    const auth = new google.auth.GoogleAuth({
-        keyFile: path.join(process.cwd(), "code-life-blog-42df71393fe9.json"),
-        scopes: ["https://www.googleapis.com/auth/drive"],
-    });
-    const driverService = google.drive({
-        version: "v3",
-        auth,
-    });
     app.get("/posts", async () => {
         const posts = await prisma.post.findMany({
             orderBy: [
@@ -58,5 +49,11 @@ export async function postRoutes(app: FastifyInstance) {
         });
         const post = { ...posts, data: file.data };
         return post;
+    });
+    app.post("/newPost", async (req, reply) => {
+        // const schema = z.object({
+        // })
+        const post = await req.file();
+        console.log(post);
     });
 }

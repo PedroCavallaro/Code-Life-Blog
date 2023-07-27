@@ -3,9 +3,6 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
-    "engines": {
-        "node": "18.x"
-    },
     "scripts": {
         "dev": "tsx watch api/server.ts",
         "postinstall": "prisma generate"
@@ -19,10 +16,13 @@
     },
     "dependencies": {
         "@fastify/cors": "^8.3.0",
+        "@fastify/jwt": "^7.2.0",
+        "@fastify/multipart": "^7.7.3",
         "@prisma/client": "^5.0.0",
         "@types/node": "^20.4.2",
         "@types/nodemailer": "^6.4.8",
         "@vercel/node": "^2.15.6",
+        "fastify-file-upload": "^4.0.0",
         "googleapis": "^122.0.0",
         "nodemailer": "^6.9.4",
         "prisma": "^5.0.0",

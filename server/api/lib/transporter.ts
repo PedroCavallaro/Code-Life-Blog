@@ -9,46 +9,131 @@ export const transporter = nodemailer.createTransport({
         pass: `${process.env.GMAIL_PASSWORD}`,
     },
 });
-export const html = `
+export const html = (title: string, link: string) => `
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
-      rel="stylesheet"
-    />
-    <title></title>
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Roboto Mono", monospace;
+        color: rgb(239, 230, 253);
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(206, 176, 250);
+      }
+
+      #wrapper {
+        background-color: rgb(70, 0, 169);
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      header {
+        margin-bottom: 2.5rem;
+      }
+
+      header > h1 {
+        text-decoration: underline;
+        margin-bottom: 5px;
+      }
+
+      header > p {
+        color: rgb(179, 179, 204);
+      }
+
+      main {
+        position: relative;
+        width: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      #post-title {
+        font-size: large;
+        margin-bottom: 2rem;
+      }
+
+      button {
+        background-color: rgb(41, 0, 100);
+        margin-bottom: 0.1rem;
+        padding: 15px;
+        border-radius: 7px;
+        border: none;
+      }
+
+      button > u {
+        font-size: 16px;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: rgb(239, 230, 253);
+        transition: ease-in-out 0.5s;
+      }
+
+      button:hover > u {
+        color: rgb(41, 0, 100);
+        transition: ease-in-out 0.5s;
+      }
+
+      button > p {
+        text-decoration: none;
+        font-size: 10px;
+        color: rgb(239, 230, 253);
+      }
+
+      #link {
+        margin-bottom: 1.7rem;
+        font-size: 12px;
+        color: rgb(179, 179, 204);
+      }
+
+      #aux-p {
+        font-size: 14px;
+      }
+    </style>
   </head>
-  <body
-    style="
-      background-color: rgb(239, 230, 253);
-      font-family: 'Roboto Mono', monospace;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      align-items: center;
-      justify-content: center;
-    "
-  >
-    <h1 style="font-size: 50px">Novo Post no Blog!</h1>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Conteúdo novo na área!</h1>
+        <p>E está maravilhoso...</p>
+      </header>
+      <main>
+        <p id="post-title">
+          O contéudo que saiu quentinho do forno agora fala sobre:
+          <b>${title}</b>.
+        </p>
 
-    <div>
-      <p style="font-size: 20px">
-        Hoje lançou mais um post no blog para vocês aproveitarem...
-      </p>
-      <p style="font-size: 20px">Assunto de Hoje: {TITULO}</p>
-      <p style="font-size: 20px">
-        E ai, <a href="#">bora embarcar nessa jornada de aprendizado?</a>
-      </p>
+        <a href="${link}">
+          <button>
+            <u>Acessar novo conteúdo</u>
+            <p>clica ai vai...</p>
+          </button>
+        </a>
+
+        <p id="link">Link direto: <a href="${link}">${link}</a></p>
+
+        <p id="aux-p">
+          Bom, eu já estou indo lá garantir essa leitura, <br />
+          aprender nunca é demais. Te encontro por lá! ✌
+        </p>
+      </main>
     </div>
-
-    <a href="#">Link direto</a>
   </body>
 </html>
-  `;
+`;

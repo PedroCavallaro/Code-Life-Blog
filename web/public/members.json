@@ -12,14 +12,14 @@
             "name": "Enzo",
             "salutation": "Hello everyone! I’m Enzo 🤟",
             "picture": "enzocas.jpeg",
-            "desc": "My name is Enzo. I’m 18 years old and I’m from Brazil !\nI’m a System Analysis and Development student, but, first of all, I’m a code lover.This blog is a part of my mind that i decided to share with others."
+            "desc": "Eae! Me chamo Enzo, tenho 18 anos! Sou um estudante de Análise e Desenvolvimento de Sistemas, mas, antes de tudo, amo escrever código. Para mim, esse blog é uma parte da minha mente que decidi compartilhar com os outros."
         },
         {
             "id": 2,
             "name": "Pedro Mossini",
-            "salutation": "macaco",
+            "salutation": "Wassup, guys! I’m Pedro Mossini 🤟",
             "picture": "PedroM.jpeg",
-            "desc": "Estudante de Análise e Desenvolvimento de Sistemas pela FATEC desde 2022. Sou gestor de tráfego e atualmente trabalho na área de marketing de maneira autônoma.Iniciei meus estudos na Faculdade de Tecnologia no começo de 2022, conhecendo apenas o básico sobre programação e desenvolvimento de sistemas, onde ainda estou me encontrando e sentindo em qual vertente dessa área tão vasta me sinto mais confortável."
+            "desc": "Fala, galera! Meu nome é Pedro e estou cursando ADS, junto com o Enzo e o outro Pedro. Sempre fui aficionado por tudo que envolve tecnologia e inovação, e a faculdade aumentou ainda mais isso, estar no meio de caras tão feras e oportunidades desse nível é incrível. Minha missão aqui é trazer um conteúdo diferenciado para os leitores, como as novas tendências e ideias que vêm surgindo por aí, pra tirar um pouquinho o foco mega-teórico! Espero que curtam as postagens e continuem programando! 🤟🏻"
         }
     ]
 }
