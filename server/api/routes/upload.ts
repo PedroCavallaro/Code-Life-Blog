@@ -1,28 +1,39 @@
 import { FastifyInstance } from "fastify";
-import { pipeline } from "node:stream";
-import { promisify } from "node:util";
+import path from "path";
 import fs from "fs";
+import { pipeline } from "stream";
 import { driverService } from "../lib/drive";
-
-// const pump = promisify(pipeline);
+import { promisify } from "node:util";
 
 export async function uploadRoutes(app: FastifyInstance) {
     app.post("/upload", async (req, reply) => {
         const upload = await req.file();
 
-        if (!upload) return reply.status(400).send();
+        const pump = promisify(pipeline);
+
+        if (!upload) return reply.status(300).send();
+
+        const writeStream = fs.createWriteStream(
+            path.resolve(process.cwd(), "uploads", upload.filename)
+        );
+
+        await pump(upload.file, writeStream);
+
+        const requestBody = {
+            name: upload.filename,
+            fields: "id",
+            parents: [process.env.POSTS_FOLDER_ID!],
+        };
 
         const uploadDrive = await driverService.files.create({
-            requestBody: {
-                name: "teste2.txt",
-                mimeType: "text/plain",
-            },
+            requestBody,
             media: {
-                mimeType: "text/plain",
-                body: fs.createReadStream("./teste2.txt", "utf-8"),
+                mimeType: upload.mimetype,
+                body: fs.createReadStream(
+                    path.join(process.cwd(), "uploads", upload.filename)
+                ),
             },
         });
-
         return uploadDrive.data;
     });
 }

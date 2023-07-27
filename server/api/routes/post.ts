@@ -53,7 +53,7 @@ export async function postRoutes(app: FastifyInstance) {
     app.post("/newPost", async (req, reply) => {
         // const schema = z.object({
         // })
-        const post = await req.file();
-        console.log(post);
+
+        console.log(req.body);
     });
 }
